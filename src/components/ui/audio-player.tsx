@@ -34,12 +34,20 @@ export function AudioPlayer({
   const [volume, setVolume] = useState(1);
   const [isMuted, setIsMuted] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const handleEnded = useCallback(() => {
     setIsPlaying(false);
     onEnded?.();
   }, [onEnded]);
+
+  const handleError = useCallback((e: Event) => {
+    console.error('Audio error:', e);
+    setError('Failed to load audio file');
+    setIsLoaded(false);
+    setIsPlaying(false);
+  }, []);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -49,23 +57,17 @@ export function AudioPlayer({
     setIsLoaded(false);
     setIsPlaying(false);
     setCurrentTime(0);
+    setError(null);
 
     const setAudioData = () => {
       setDuration(audio.duration);
       setCurrentTime(audio.currentTime);
       setIsLoaded(true);
-      console.log('Audio loaded:', { duration: audio.duration, currentTime: audio.currentTime });
+      setError(null);
     }
 
     const setAudioTime = () => {
       setCurrentTime(audio.currentTime);
-      console.log('Time update:', audio.currentTime);
-    }
-
-    const handleError = (e: Event) => {
-      console.error('Audio error:', e);
-      setIsLoaded(false);
-      setIsPlaying(false);
     }
     
     // Add event listeners
@@ -80,7 +82,7 @@ export function AudioPlayer({
       audio.removeEventListener('ended', handleEnded);
       audio.removeEventListener('error', handleError);
     }
-  }, [src, handleEnded]);
+  }, [src, handleEnded, handleError]);
 
   useEffect(() => {
     if (audioRef.current) {
@@ -153,92 +155,97 @@ export function AudioPlayer({
         ref={audioRef} 
         src={src} 
         preload="auto"
-        onLoadStart={() => console.log('Loading started')}
-        onLoadedMetadata={() => console.log('Metadata loaded')}
-        onLoadedData={() => console.log('Data loaded')}
-        onError={(e) => console.error('Audio error:', e)}
       />
       
-      <div className="flex items-center justify-center space-x-2">
-        {onPrevious && (
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={onPrevious}
-            className="h-8 w-8"
-            disabled={!isLoaded}
-          >
-            <SkipBackIcon className="h-4 w-4" />
-          </Button>
-        )}
-        
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={handlePlayPause}
-          className="h-8 w-8"
-          disabled={!isLoaded}
-        >
-          {isPlaying ? (
-            <PauseIcon className="h-4 w-4" />
-          ) : (
-            <PlayIcon className="h-4 w-4" />
-          )}
-        </Button>
+      {error ? (
+        <p className="text-sm text-destructive">{error}</p>
+      ) : (
+        <>
+          <div className="flex items-center justify-center space-x-2">
+            {onPrevious && (
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={onPrevious}
+                className="h-8 w-8"
+                disabled={!isLoaded}
+              >
+                <SkipBackIcon className="h-4 w-4" />
+              </Button>
+            )}
+            
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={handlePlayPause}
+              className="h-8 w-8"
+              disabled={!isLoaded}
+            >
+              {isPlaying ? (
+                <PauseIcon className="h-4 w-4" />
+              ) : (
+                <PlayIcon className="h-4 w-4" />
+              )}
+            </Button>
 
-        {onNext && (
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={onNext}
-            className="h-8 w-8"
-            disabled={!isLoaded}
-          >
-            <SkipForwardIcon className="h-4 w-4" />
-          </Button>
-        )}
-      </div>
+            {onNext && (
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={onNext}
+                className="h-8 w-8"
+                disabled={!isLoaded}
+              >
+                <SkipForwardIcon className="h-4 w-4" />
+              </Button>
+            )}
+          </div>
 
-      <div className="flex items-center space-x-3">
-        <span className="w-12 text-sm tabular-nums">
-          {formatTime(currentTime)}
-        </span>
-        <Slider
-          value={[currentTime]}
-          max={duration || 100}
-          step={0.1}
-          onValueChange={handleTimeChange}
-          className="w-full"
-          disabled={!isLoaded}
-        />
-        <span className="w-12 text-sm tabular-nums">
-          {formatTime(duration)}
-        </span>
-      </div>
+          <div className="flex items-center gap-3">
+            <span className="w-12 text-sm text-muted-foreground text-right">
+              {formatTime(currentTime)}
+            </span>
+            
+            <Slider
+              value={[currentTime]}
+              max={duration}
+              step={0.1}
+              onValueChange={handleTimeChange}
+              className="w-full"
+              disabled={!isLoaded}
+            />
+            
+            <span className="w-12 text-sm text-muted-foreground">
+              {formatTime(duration)}
+            </span>
+          </div>
 
-      <div className="flex items-center space-x-3">
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={handleMuteToggle}
-          className="h-8 w-8"
-          disabled={!isLoaded}
-        >
-          {isMuted ? (
-            <VolumeXIcon className="h-4 w-4" />
-          ) : (
-            <Volume2Icon className="h-4 w-4" />
-          )}
-        </Button>
-        <Slider
-          value={[volume]}
-          max={1}
-          step={0.01}
-          onValueChange={handleVolumeChange}
-          className="w-24"
-          disabled={!isLoaded}
-        />
-      </div>
+          <div className="flex items-center gap-2">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={handleMuteToggle}
+              className="h-6 w-6"
+              disabled={!isLoaded}
+            >
+              {isMuted ? (
+                <VolumeXIcon className="h-4 w-4" />
+              ) : (
+                <Volume2Icon className="h-4 w-4" />
+              )}
+            </Button>
+            
+            <Slider
+              value={[volume]}
+              max={1}
+              step={0.01}
+              onValueChange={handleVolumeChange}
+              className="w-24"
+              disabled={!isLoaded}
+            />
+          </div>
+        </>
+      )}
     </div>
   );
 }

@@ -6,28 +6,28 @@ const tracks: AudioTrack[] = [
     artist: "C-Cell",
     duration: "4:15",
     src: "/audio/home.mp3",
-    coverImage: "/images/audio/home.jpg"
+    coverImage: "/images/audio/default-cover.svg"
   },
   {
-    title: "Urban Flow",
+    title: "Cantina Band",
     artist: "C-Cell",
-    duration: "3:45",
-    src: "/audio/urban-flow.mp3",
-    coverImage: "/images/audio/urban-flow.jpg"
+    duration: "3:15",
+    src: "https://www2.cs.uic.edu/~i101/SoundFiles/CantinaBand60.wav", // Placeholder
+    coverImage: "/images/audio/default-cover.svg"
   },
   {
-    title: "Midnight Dreams",
+    title: "Star Wars",
     artist: "C-Cell",
     duration: "5:20",
-    src: "/audio/midnight-dreams.mp3",
-    coverImage: "/images/audio/midnight-dreams.jpg"
+    src: "https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav", // Placeholder
+    coverImage: "/images/audio/default-cover.svg"
   },
   {
-    title: "Digital Horizon",
+    title: "Imperial March",
     artist: "C-Cell",
     duration: "4:30",
-    src: "/audio/digital-horizon.mp3",
-    coverImage: "/images/audio/digital-horizon.jpg"
+    src: "https://www2.cs.uic.edu/~i101/SoundFiles/ImperialMarch60.wav", // Placeholder
+    coverImage: "/images/audio/default-cover.svg"
   }
 ];
 

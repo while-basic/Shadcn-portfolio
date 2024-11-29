@@ -6,7 +6,8 @@
 - [x] fix experience page and navbar links
 - [x] update experience page
 - [ ] add projects page
-- [ ] add audio page
+- [ ] fix project tile alignment
+- [x] add audio page
 - [x] add education page
 - [x] add contact page
 - [x] add testimonials page
