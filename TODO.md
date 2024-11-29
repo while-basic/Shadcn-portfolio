@@ -2,9 +2,11 @@
 
 - [ ] revamp home page
 - [ ] revamp image generation
-- [ ] add what i do
-- [ ] add genereate to menu navbar
-- [ ] add case study to project tiles
+- [x] add what i do
+- [x] add genereate to menu navbar
+- [x] add case study to project tiles
+- [ ] add groq chat
+- [x] add claude chat
 - [ ] add image generation
   - [ ] add download button
   - [ ] add consistent image generation
@@ -15,9 +17,9 @@
 - [ ] update skills on home page
 - [ ] projects don't render on home page
 - [ ] projects need to navigate to their own page
-- [ ] add breadcrumbs for page navigation
+- [x] add breadcrumbs for page navigation
 - [x] add blog to navlinks
-- [ ] add breadcrumbs
+- [x] add breadcrumbs
 - [x] projet page needs a back button
 - [ ] add work gallery
 - [ ] add hover animation to nav links

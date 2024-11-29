@@ -351,7 +351,7 @@ export default function Home() {
         <section className="container py-8 bg-muted/50">
           <Card className="relative overflow-hidden">
             <CardHeader className="space-y-1">
-              <CardTitle className="text-2xl">Let's Talk About Your Project</CardTitle>
+              <CardTitle className="text-2xl">Let&apos;s Talk About Your Project</CardTitle>
               <CardDescription>
                 Schedule a 30-minute call to discuss your ideas and how we can work together
               </CardDescription>
@@ -388,7 +388,7 @@ export default function Home() {
         <section className="container py-8">
           <Card>
             <CardHeader>
-              <CardTitle>Let's Connect</CardTitle>
+              <CardTitle>Let&apos;s Connect</CardTitle>
               <CardDescription>Get in touch for collaborations or opportunities</CardDescription>
             </CardHeader>
             <CardContent>
