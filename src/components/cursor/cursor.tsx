@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import styles from './style.module.scss';
 import {
   motion,
@@ -49,7 +49,7 @@ export default function Cursor() {
     }
   };
 
-  const manageMouseMove = (e: MouseMoveEvent) => {
+  const manageMouseMove = useCallback((e: MouseMoveEvent) => {
     const isFinePointer = window.matchMedia('(pointer: fine)').matches;
     if (!isFinePointer) {
       setIsVisible(false);
@@ -60,7 +60,7 @@ export default function Cursor() {
     const { clientX, clientY } = e;
     mouse.x.set(clientX - cursorSize / 2);
     mouse.y.set(clientY - cursorSize / 2);
-  };
+  }, [isVisible, mouse.x, mouse.y, cursorSize]);
 
   const manageMouseLeave = () => {
     setIsVisible(false);
@@ -101,7 +101,7 @@ export default function Cursor() {
       window.removeEventListener('mousedown', handleMouseDown);
       window.removeEventListener('mouseup', handleMouseUp);
     };
-  }, []);
+  }, [manageMouseMove]);
 
   const template = ({
     rotate,

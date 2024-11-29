@@ -7,15 +7,21 @@ const metadata: Metadata = {
     label: 'Designer & Developer'
   },
   site: {
-    title: 'John Doe',
-    description: 'Portfolio of web & UI designer/developer John Doe.',
-    url: 'https://www.example.com',
+    title: 'Christopher Celaya',
+    description: 'Portfolio of mechatronics technician and software developer, Christopher Celaya.',
+    url: 'https://www.chriscelaya.com',
     keywords: [
       'web design',
       'UI design',
       'web development',
       'portfolio',
-      'John Doe'
+      'Christopher Celaya',
+      'mechatronics',
+      'mechatronics technician',
+      'software developer',
+      'preventative maintenance',
+      'electrical engineering',
+      'electronic engineering'
     ],
     language: 'en',
     charset: 'UTF-8'

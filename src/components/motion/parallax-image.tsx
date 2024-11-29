@@ -5,7 +5,7 @@ import Image, { ImageProps } from 'next/image';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
-interface ParallaxImageProps extends Omit<ImageProps, 'ref'> {
+interface ParallaxImageProps extends Omit<ImageProps, 'src' | 'ref'> {
   className?: string;
   containerRef: RefObject<HTMLElement | null>;
   containerClassName?: string;
@@ -15,6 +15,8 @@ interface ParallaxImageProps extends Omit<ImageProps, 'ref'> {
     scaleStart?: number;
     scaleEnd?: number;
   };
+  src: ImageProps['src'];
+  alt: string;
 }
 
 const ParallaxImage = ({
@@ -22,6 +24,8 @@ const ParallaxImage = ({
   containerRef,
   containerClassName,
   parallaxOptions,
+  src,
+  alt,
   ...props
 }: ParallaxImageProps) => {
   const {
@@ -44,7 +48,7 @@ const ParallaxImage = ({
       className={cn('relative w-full overflow-hidden', containerClassName)}
       style={{ y, scale }}
     >
-      <Image className={cn('object-cover', className)} fill {...props} />
+      <Image className={cn('object-cover', className)} fill src={src} alt={alt} {...props} />
     </motion.div>
   );
 };

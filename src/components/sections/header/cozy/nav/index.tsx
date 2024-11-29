@@ -42,6 +42,7 @@ const Index: React.FC<IndexProps> = ({ setIsActive }) => {
           />
           {/* <Footer /> */}
         </div>
+        {/* eslint-disable-next-line jsx-a11y/alt-text */}
         <Image
           src={links[selectedLink.index].thumbnail}
           isActive={selectedLink.isActive}
