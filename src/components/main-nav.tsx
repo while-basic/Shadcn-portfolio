@@ -11,6 +11,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { SignedIn } from "@clerk/nextjs";
 
 const navItems = [
   // { href: "/", label: "Home" },
@@ -22,6 +23,17 @@ const navItems = [
   // { href: "/audio", label: "Audio" },
   // { href: "/blog", label: "Blog" },
   { href: "/chat", label: "Chat" },
+  { 
+    href: "/dashboard", 
+    label: "Dashboard", 
+    renderCondition: (
+      <SignedIn key="dashboard-nav-item">
+        <Link href="/dashboard" className="text-sm font-medium transition-all duration-200 relative hover:text-primary group after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-full after:origin-center after:scale-x-0 after:bg-primary after:transition-transform after:duration-200 group-hover:after:scale-x-100">
+          Dashboard
+        </Link>
+      </SignedIn>
+    )
+  },
 ];
 
 export function MainNav() {
@@ -41,18 +53,21 @@ export function MainNav() {
           <DropdownMenuContent align="start" className="w-[200px]">
             {navItems.map((item) => (
               <DropdownMenuItem key={item.href} asChild>
-                <Link
-                  href={item.href}
-                  className={cn(
-                    "w-full transition-all duration-200 relative",
-                    "hover:pl-6",
-                    pathname === item.href 
-                      ? "font-medium text-primary" 
-                      : "text-muted-foreground hover:text-primary"
-                  )}
-                >
-                  {item.label}
-                </Link>
+                {item.renderCondition ? 
+                  item.renderCondition : 
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      "w-full transition-all duration-200 relative",
+                      "hover:pl-6",
+                      pathname === item.href 
+                        ? "font-medium text-primary" 
+                        : "text-muted-foreground hover:text-primary"
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                }
               </DropdownMenuItem>
             ))}
           </DropdownMenuContent>
@@ -69,19 +84,23 @@ export function MainNav() {
         </Link>
         <nav className="flex items-center space-x-6 text-sm font-medium">
           {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "relative transition-all duration-200 hover:text-primary group",
-                "after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-full after:origin-center after:scale-x-0 after:bg-primary after:transition-transform after:duration-200 group-hover:after:scale-x-100",
-                pathname === item.href 
-                  ? "text-primary after:scale-x-100" 
-                  : "text-muted-foreground hover:-translate-y-[2px]"
-              )}
-            >
-              {item.label}
-            </Link>
+            <React.Fragment key={item.href}>
+              {item.renderCondition ? 
+                item.renderCondition : 
+                <Link
+                  href={item.href}
+                  className={cn(
+                    "relative transition-all duration-200 hover:text-primary group",
+                    "after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-full after:origin-center after:scale-x-0 after:bg-primary after:transition-transform after:duration-200 group-hover:after:scale-x-100",
+                    pathname === item.href 
+                      ? "text-primary after:scale-x-100" 
+                      : "text-muted-foreground hover:-translate-y-[2px]"
+                  )}
+                >
+                  {item.label}
+                </Link>
+              }
+            </React.Fragment>
           ))}
         </nav>
       </div>

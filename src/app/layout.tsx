@@ -9,6 +9,7 @@ import '@/styles/globals.css';
 import { Toaster } from '@/components/ui/sonner';
 import { ThemeProvider } from '@/components/theme-provider';
 import { SiteHeader } from '@/components/site-header';
+import { ClerkProvider } from '@clerk/nextjs';
 
 import { metadata as meta } from '@/app/config';
 import Loader from '@/app/loader';
@@ -44,15 +45,17 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Providers>
-            <div className="relative flex min-h-screen flex-col">
-              <SiteHeader />
-              <main className="flex-1">
-                <Loader />
-                {children}
-              </main>
-            </div>
-          </Providers>
+          <ClerkProvider>
+            <Providers>
+              <div className="relative flex min-h-screen flex-col">
+                <SiteHeader />
+                <main className="flex-1">
+                  <Loader />
+                  {children}
+                </main>
+              </div>
+            </Providers>
+          </ClerkProvider>
           <Toaster />
         </ThemeProvider>
       </body>
