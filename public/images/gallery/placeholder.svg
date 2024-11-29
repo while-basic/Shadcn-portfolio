@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" version="1.1" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+ <rect width="800" height="600" fill="#1e293b"/>
+ <g transform="matrix(1.5 0 0 1.5 250 150)" fill="#64748b">
+  <path d="M100 116.667V100H0V0h66.667v16.667H16.667v66.666h83.333V50h16.667v66.667z"/>
+  <path d="M83.333 50V33.333h50V0H150v50z"/>
+ </g>
+ <text x="400" y="450" fill="#94a3b8" font-family="sans-serif" font-size="24" text-anchor="middle">Image Placeholder</text>
+</svg>
