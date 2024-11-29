@@ -1,8 +1,23 @@
+export interface ProjectTag {
+  label: string;
+}
+
 export interface Project {
   title: string;
-  description?: string;
-  website?: string;
-  github?: string;
-  tags?: Array<{ label: string }>;
-  thumbnail?: string;
+  description: string;
+  slug: string;
+  tags: ProjectTag[];
+  date: string;
+  introduction?: string;
+  background?: string;
+  useCase?: string;
+  inspiration?: string;
+  projectDetails?: string;
+  technologyStack?: string[];
+  developmentProcess?: string;
+  features?: string[];
+  benefits?: string[];
+  challenges?: string[];
+  futurePlans?: string[];
+  conclusion?: string;
 }

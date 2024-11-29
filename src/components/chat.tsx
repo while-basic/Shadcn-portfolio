@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { toast } from 'sonner';
+import { ArrowUp, ArrowDown } from 'lucide-react';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -22,14 +23,42 @@ export function Chat() {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
+  const [showScrollButtons, setShowScrollButtons] = useState(false);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const scrollToTop = () => {
+    messagesContainerRef.current?.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  useEffect(() => {
+    const container = messagesContainerRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      const { scrollHeight, clientHeight } = container;
+      setShowScrollButtons(scrollHeight > clientHeight);
+    };
+
+    handleScroll();
+    container.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
+
+    return () => {
+      container.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -76,8 +105,29 @@ export function Chat() {
   };
 
   return (
-    <Card className="w-full h-[calc(100vh-12rem)] flex flex-col bg-background">
-      <div className="flex-1 overflow-y-auto p-4">
+    <Card className="w-full h-[calc(100vh-12rem)] flex flex-col bg-background relative">
+      {showScrollButtons && (
+        <div className="absolute right-4 top-20 z-10 flex flex-col gap-2">
+          <Button
+            size="icon"
+            variant="outline"
+            onClick={scrollToTop}
+            className="h-8 w-8 rounded-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+          >
+            <ArrowUp className="h-4 w-4" />
+          </Button>
+          <Button
+            size="icon"
+            variant="outline"
+            onClick={scrollToBottom}
+            className="h-8 w-8 rounded-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+          >
+            <ArrowDown className="h-4 w-4" />
+          </Button>
+        </div>
+      )}
+      
+      <div className="flex-1 overflow-y-auto p-4" ref={messagesContainerRef}>
         <div className="space-y-4">
           {messages.map((message, index) => (
             <div

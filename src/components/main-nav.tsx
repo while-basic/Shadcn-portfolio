@@ -20,6 +20,7 @@ const navItems = [
   { href: "/experience", label: "Experience" },
   { href: "/gallery", label: "Gallery" },
   { href: "/audio", label: "Audio" },
+  { href: "/blog", label: "Blog" },
   { href: "/chat", label: "Chat" },
 ];
 
@@ -43,7 +44,8 @@ export function MainNav() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "w-full transition-colors duration-200",
+                    "w-full transition-all duration-200 relative",
+                    "hover:pl-6",
                     pathname === item.href 
                       ? "font-medium text-primary" 
                       : "text-muted-foreground hover:text-primary"
@@ -61,7 +63,7 @@ export function MainNav() {
       <div className="hidden md:flex items-center">
         <Link 
           href="/" 
-          className="mr-6 flex items-center space-x-2 font-bold hover:text-primary transition-colors duration-200"
+          className="mr-6 flex items-center space-x-2 font-bold transition-all duration-200 hover:text-primary hover:scale-105"
         >
           <span>Christopher Celaya</span>
         </Link>
@@ -71,11 +73,11 @@ export function MainNav() {
               key={item.href}
               href={item.href}
               className={cn(
-                "relative transition-colors duration-200 hover:text-primary",
-                "after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-200 hover:after:scale-x-100",
+                "relative transition-all duration-200 hover:text-primary group",
+                "after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-full after:origin-center after:scale-x-0 after:bg-primary after:transition-transform after:duration-200 group-hover:after:scale-x-100",
                 pathname === item.href 
                   ? "text-primary after:scale-x-100" 
-                  : "text-muted-foreground"
+                  : "text-muted-foreground hover:-translate-y-[2px]"
               )}
             >
               {item.label}

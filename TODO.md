@@ -1,17 +1,26 @@
 # TODO
 
-- [x] fix navbar links
+- [ ] revamp home page
+- [ ] add featured music
+- [ ] cal.com redirect
+- [ ] add page navigation on chat
+- [ ] update skills on home page
+- [ ] projects don't render on home page
+- [ ] add breadcrumbs for page navigation
+- [ ] add blog to navlinks
+- [ ] projet page needs a back button
 - [ ] add work gallery
 - [ ] add hover animation to nav links
+- [x] fix navbar links
 - [x] fix experience page and navbar links
 - [x] update experience page
-- [ ] add projects page
-- [ ] fix project tile alignment
+- [x] add projects page
+- [x] fix project tile alignment
 - [x] add audio page
 - [x] add education page
 - [x] add contact page
 - [x] add testimonials page
-- [ ] add blog page
+- [x] add blog page
 - [x] add about page
 - [ ] Add different types of transition providers (like cozy, modern, )
 - [ ] Add different types of loader types (like cozy, modern, )

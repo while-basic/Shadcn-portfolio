@@ -42,7 +42,7 @@ export default function GalleryPage() {
         </h1>
         <p className="text-muted-foreground">
           <TextReveal>
-            A curated collection of my photography work across various categories.
+            A curated collection of my work across various categories.
           </TextReveal>
         </p>
       </div>

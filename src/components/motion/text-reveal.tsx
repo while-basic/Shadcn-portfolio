@@ -10,7 +10,7 @@ const TextReveal: React.FC<{ children: React.ReactNode; delay?: number }> = ({
     if (typeof child === 'string') {
       return child.split(' ').map((word, index) => (
         <React.Fragment key={`word-${index}`}>
-          <Reveal transition={{ duration: 0.5, delay: delay * index }}>
+          <Reveal transition={{ duration: 0.25, delay: delay * index }}>
             {word}
           </Reveal>
           {index !== child.split(' ').length - 1 && ' '}

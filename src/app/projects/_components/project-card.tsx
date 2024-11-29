@@ -37,57 +37,67 @@ function ProjectCard({
   return (
     <Card
       className={cn(
-        'relative flex h-full flex-col justify-between border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900',
+        'group relative flex h-full flex-col overflow-hidden border border-zinc-950/10 bg-white transition-all duration-300 hover:shadow-lg dark:border-zinc-50/10 dark:bg-zinc-900',
         className
       )}
     >
-      <CardContent className="p-4 md:p-6">
-        <div className="grid gap-2">
+      <CardContent className="flex-1 p-4">
+        <div className="flex flex-col gap-4">
           <AspectRatio
             ratio={16 / 9}
-            className="z-[2] mb-2 inline-block overflow-hidden rounded-md"
+            className="overflow-hidden rounded-lg bg-muted"
           >
             <Image
-              src={thumbnail || '/placeholder.svg'}
+              src={thumbnail || '/images/projects/placeholder.svg'}
               alt={`Image of ${title}`}
               fill
-              className="object-cover transition-transform duration-300 hover:scale-105"
+              className="object-cover transition-all duration-300 group-hover:scale-105"
             />
           </AspectRatio>
-          <h3 className="text-xl font-bold">
-            <TextReveal>{title}</TextReveal>
-          </h3>
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            <TextReveal>{description || ''}</TextReveal>
-          </p>
-          <div className="mt-2 flex flex-wrap gap-2">
+          <div className="space-y-2">
+            <h3 className="text-xl font-bold leading-tight">
+              <TextReveal>{title}</TextReveal>
+            </h3>
+            <p className="text-sm text-muted-foreground">
+              <TextReveal>{description || ''}</TextReveal>
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2">
             {tags?.map((tag, index) => (
-              <Badge key={`project-tag_${index}`}>{tag.label}</Badge>
+              <Badge 
+                key={`project-tag_${index}`}
+                variant="secondary"
+                className="transition-colors duration-300 group-hover:bg-primary/10"
+              >
+                {tag.label}
+              </Badge>
             ))}
           </div>
         </div>
       </CardContent>
-      <CardFooter className="flex items-center justify-end p-4 md:p-6">
+      <CardFooter className="p-4 pt-0">
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
                 variant="ghost"
-                className="z-[2] rounded-md border border-zinc-950/10 dark:border-zinc-50/10"
+                size="sm"
+                className="ml-auto transition-colors duration-300 group-hover:bg-primary/10"
                 asChild
               >
                 <Link href={href}>
-                  <InfoIcon />
+                  <InfoIcon className="h-4 w-4" />
+                  <span className="sr-only">View project details</span>
                 </Link>
               </Button>
             </TooltipTrigger>
             <TooltipContent>
-              <p>More Details</p>
+              <p>View Details</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
       </CardFooter>
-      <Link href={href} className="z-1 absolute inset-0 block" />
+      <Link href={href} className="absolute inset-0 z-0" />
     </Card>
   );
 }
