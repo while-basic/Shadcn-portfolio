@@ -1,156 +1,76 @@
 import { Photo } from '@/types/gallery';
 
 export const categories = [
-  { id: 'wiring', name: 'Wiring', count: 4 },
-  { id: 'electrical', name: 'Electrical', count: 4 },
-  { id: 'mechanical', name: 'Mechanical', count: 4 },
-  { id: 'cooling', name: 'Cooling', count: 4 },
+  { id: 'software', name: 'Software Development', count: 4 },
+  { id: 'mechatronics', name: 'Mechatronics', count: 4 },
+  { id: 'automation', name: 'Industrial Automation', count: 4 },
+  { id: 'projects', name: 'Personal Projects', count: 4 },
 ];
 
 export const photos: Photo[] = [
   {
     id: '1',
-    title: 'Server Rack Wiring',
-    description: 'Clean cable management in a server rack installation',
-    src: '/images/gallery/wiring-1.jpg',
-    category: 'wiring',
-    date: '2024-01-15',
-    tags: ['server', 'cables', 'infrastructure'],
-    location: 'Data Center, CA'
+    title: 'Data Center Operations',
+    description: 'Managed critical and non-critical data center infrastructure at T5 Data Centers',
+    src: '/images/gallery/datacenter-1.jpg',
+    category: 'automation',
+    date: '2021-2022',
+    tags: ['CMMS', 'infrastructure', 'maintenance'],
+    location: 'San Antonio, Texas'
   },
   {
     id: '2',
-    title: 'Power Distribution',
-    description: 'Industrial power distribution panel installation',
-    src: '/images/gallery/electrical-1.jpg',
-    category: 'electrical',
-    date: '2024-01-20',
-    tags: ['power', 'industrial', 'installation']
+    title: 'Industrial Manufacturing',
+    description: 'Implemented automation solutions and maintained factory equipment at CM Wire',
+    src: '/images/gallery/manufacturing-1.jpg',
+    category: 'mechatronics',
+    date: '2019-2021',
+    tags: ['PLC', 'HMI', 'automation'],
+    location: 'Santa Teresa, New Mexico'
   },
   {
     id: '3',
-    title: 'HVAC Installation',
-    description: 'Commercial HVAC system setup',
-    src: '/images/gallery/mechanical-1.jpg',
-    category: 'mechanical',
-    date: '2024-02-01',
-    tags: ['hvac', 'commercial', 'installation']
+    title: 'MedChat',
+    description: 'Large Language Model for medical diagnostics and patient care',
+    src: '/images/gallery/medchat-1.jpg',
+    category: 'software',
+    date: '2023',
+    tags: ['AI', 'healthcare', 'LLM']
   },
   {
     id: '4',
-    title: 'Cooling System',
-    description: 'Data center cooling infrastructure',
-    src: '/images/gallery/cooling-1.jpg',
-    category: 'cooling',
-    date: '2024-02-05',
-    tags: ['cooling', 'datacenter', 'infrastructure']
+    title: 'ChatterSync',
+    description: 'AI-powered chatbot system for real-time multi-chatbot interactions',
+    src: '/images/gallery/chattersync-1.jpg',
+    category: 'software',
+    date: '2023',
+    tags: ['AI', 'chatbot', 'real-time']
   },
   {
     id: '5',
-    title: 'Network Cabinet',
-    description: 'Structured network cabling installation',
-    src: '/images/gallery/wiring-2.jpg',
-    category: 'wiring',
-    date: '2024-02-10',
-    tags: ['network', 'cabinet', 'cabling']
+    title: 'Gemini Pro Vision',
+    description: 'Web application leveraging Google\'s Gemini Pro for vision and text analysis',
+    src: '/images/gallery/gemini-1.jpg',
+    category: 'projects',
+    date: '2023',
+    tags: ['AI', 'vision', 'web-app']
   },
   {
     id: '6',
-    title: 'Circuit Installation',
-    description: 'Custom circuit board installation',
-    src: '/images/gallery/electrical-2.jpg',
-    category: 'electrical',
-    date: '2024-02-15',
-    tags: ['circuit', 'electronics', 'custom']
+    title: 'MIDI Saber',
+    description: 'Game development project using JavaScript and Unity for Beat Saber map creation',
+    src: '/images/gallery/midi-1.jpg',
+    category: 'projects',
+    date: '2023',
+    tags: ['game-dev', 'unity', 'javascript']
   },
   {
     id: '7',
-    title: 'Pump System',
-    description: 'Industrial pump system installation',
-    src: '/images/gallery/mechanical-2.jpg',
-    category: 'mechanical',
-    date: '2024-02-20',
-    tags: ['pump', 'industrial', 'system']
-  },
-  {
-    id: '8',
-    title: 'Chiller Unit',
-    description: 'Industrial chiller installation and setup',
-    src: '/images/gallery/cooling-2.jpg',
-    category: 'cooling',
-    date: '2024-02-25',
-    tags: ['chiller', 'industrial', 'cooling']
-  },
-  {
-    id: '9',
-    title: 'Fiber Optic Installation',
-    description: 'High-speed fiber optic cable routing',
-    src: '/images/gallery/wiring-3.jpg',
-    category: 'wiring',
-    date: '2024-03-01',
-    tags: ['fiber', 'network', 'installation']
-  },
-  {
-    id: '10',
-    title: 'Control Panel',
-    description: 'Industrial control panel wiring',
-    src: '/images/gallery/electrical-3.jpg',
-    category: 'electrical',
-    date: '2024-03-05',
-    tags: ['control', 'panel', 'industrial']
-  },
-  {
-    id: '11',
-    title: 'Ventilation System',
-    description: 'Commercial ventilation system installation',
-    src: '/images/gallery/mechanical-3.jpg',
-    category: 'mechanical',
-    date: '2024-03-10',
-    tags: ['ventilation', 'commercial', 'system']
-  },
-  {
-    id: '12',
-    title: 'Cooling Tower',
-    description: 'Industrial cooling tower maintenance',
-    src: '/images/gallery/cooling-3.jpg',
-    category: 'cooling',
-    date: '2024-03-15',
-    tags: ['cooling', 'tower', 'maintenance']
-  },
-  {
-    id: '13',
-    title: 'Data Center Cabling',
-    description: 'Enterprise data center cable management',
-    src: '/images/gallery/wiring-4.jpg',
-    category: 'wiring',
-    date: '2024-03-20',
-    tags: ['datacenter', 'cables', 'enterprise']
-  },
-  {
-    id: '14',
-    title: 'Emergency Power',
-    description: 'Emergency power system installation',
-    src: '/images/gallery/electrical-4.jpg',
-    category: 'electrical',
-    date: '2024-03-25',
-    tags: ['emergency', 'power', 'backup']
-  },
-  {
-    id: '15',
-    title: 'Pneumatic System',
-    description: 'Industrial pneumatic system setup',
-    src: '/images/gallery/mechanical-4.jpg',
-    category: 'mechanical',
-    date: '2024-03-30',
-    tags: ['pneumatic', 'industrial', 'system']
-  },
-  {
-    id: '16',
-    title: 'Server Room Cooling',
-    description: 'Precision cooling for server room',
-    src: '/images/gallery/cooling-4.jpg',
-    category: 'cooling',
-    date: '2024-04-01',
-    tags: ['server', 'cooling', 'precision']
+    title: 'SDXL Image Generation',
+    description: 'AI-powered image generation using Stability AI\'s SDXL model through Replicate API. Create high-quality images from text descriptions.',
+    src: '/images/gallery/sdxl-1.jpg',
+    category: 'software',
+    date: '2024',
+    tags: ['AI', 'image-generation', 'replicate-api', 'next.js']
   }
 ];

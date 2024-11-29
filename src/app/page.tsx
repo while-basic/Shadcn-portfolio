@@ -216,42 +216,61 @@ export default function Home() {
               <TabsTrigger value="skills">Skills</TabsTrigger>
               <TabsTrigger value="experience">Experience</TabsTrigger>
             </TabsList>
-            <TabsContent value="skills">
+            <TabsContent value="skills" className="border-none p-0 outline-none">
               <Card>
                 <CardHeader>
-                  <CardTitle>Technical Skills</CardTitle>
-                  <CardDescription>Technologies and tools I work with</CardDescription>
+                  <CardTitle>Skills & Technologies</CardTitle>
+                  <CardDescription>
+                    A comprehensive overview of my technical expertise and capabilities
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ScrollArea className="h-[400px] w-full rounded-md border p-4">
-                    <div className="grid gap-4">
+                    <div className="grid gap-6">
                       <div>
-                        <h3 className="font-semibold mb-2">Frontend Development</h3>
+                        <h3 className="font-semibold mb-2">Software Development</h3>
                         <div className="flex flex-wrap gap-2">
-                          <Badge variant="secondary">React</Badge>
-                          <Badge variant="secondary">Next.js</Badge>
-                          <Badge variant="secondary">TypeScript</Badge>
-                          <Badge variant="secondary">Tailwind CSS</Badge>
-                        </div>
-                      </div>
-                      <Separator />
-                      <div>
-                        <h3 className="font-semibold mb-2">Backend Development</h3>
-                        <div className="flex flex-wrap gap-2">
-                          <Badge variant="secondary">Node.js</Badge>
                           <Badge variant="secondary">Python</Badge>
-                          <Badge variant="secondary">PostgreSQL</Badge>
-                          <Badge variant="secondary">MongoDB</Badge>
+                          <Badge variant="secondary">JavaScript</Badge>
+                          <Badge variant="secondary">Java</Badge>
+                          <Badge variant="secondary">C#</Badge>
+                          <Badge variant="secondary">HTML/CSS</Badge>
+                          <Badge variant="secondary">React</Badge>
+                          <Badge variant="secondary">Node.js</Badge>
                         </div>
                       </div>
                       <Separator />
                       <div>
-                        <h3 className="font-semibold mb-2">Automation & IoT</h3>
+                        <h3 className="font-semibold mb-2">Database & Cloud</h3>
+                        <div className="flex flex-wrap gap-2">
+                          <Badge variant="secondary">SQL</Badge>
+                          <Badge variant="secondary">MongoDB</Badge>
+                          <Badge variant="secondary">PostgreSQL</Badge>
+                          <Badge variant="secondary">Google Cloud</Badge>
+                          <Badge variant="secondary">Azure</Badge>
+                          <Badge variant="secondary">Docker</Badge>
+                        </div>
+                      </div>
+                      <Separator />
+                      <div>
+                        <h3 className="font-semibold mb-2">Industrial Automation</h3>
                         <div className="flex flex-wrap gap-2">
                           <Badge variant="secondary">PLC Programming</Badge>
-                          <Badge variant="secondary">SCADA Systems</Badge>
-                          <Badge variant="secondary">Industrial IoT</Badge>
-                          <Badge variant="secondary">Process Control</Badge>
+                          <Badge variant="secondary">HMI Development</Badge>
+                          <Badge variant="secondary">CMMS Systems</Badge>
+                          <Badge variant="secondary">Preventive Maintenance</Badge>
+                          <Badge variant="secondary">Industrial Manufacturing</Badge>
+                        </div>
+                      </div>
+                      <Separator />
+                      <div>
+                        <h3 className="font-semibold mb-2">Project Management</h3>
+                        <div className="flex flex-wrap gap-2">
+                          <Badge variant="secondary">Project Planning</Badge>
+                          <Badge variant="secondary">Team Leadership</Badge>
+                          <Badge variant="secondary">Documentation</Badge>
+                          <Badge variant="secondary">Quality Assurance</Badge>
+                          <Badge variant="secondary">Process Improvement</Badge>
                         </div>
                       </div>
                     </div>
@@ -259,16 +278,64 @@ export default function Home() {
                 </CardContent>
               </Card>
             </TabsContent>
-            <TabsContent value="experience">
+            <TabsContent value="experience" className="border-none p-0 outline-none">
               <Card>
                 <CardHeader>
-                  <CardTitle>Work Experience</CardTitle>
-                  <CardDescription>My professional journey</CardDescription>
+                  <CardTitle>Professional Experience</CardTitle>
+                  <CardDescription>
+                    My journey through software development and industrial automation
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ScrollArea className="h-[400px] w-full rounded-md border p-4">
-                    <div className="space-y-6">
-                      {/* Add experience items */}
+                    <div className="space-y-8">
+                      <div>
+                        <h3 className="text-lg font-semibold">Data Center Technician III</h3>
+                        <p className="text-sm text-muted-foreground">T5 Data Centers - San Antonio, Texas</p>
+                        <p className="text-sm text-muted-foreground font-medium">2021-2022</p>
+                        <ul className="list-disc pl-4 mt-2 text-sm space-y-1">
+                          <li>Managed critical and non-critical data center infrastructure</li>
+                          <li>Collaborated with a team of Critical Facilities Technician (CFT) to ensure total uptime</li>
+                          <li>Utilized CMMS for maintenance scheduling and documentation</li>
+                          <li>Supervised external contractors and ensured compliance with facility standards</li>
+                        </ul>
+                      </div>
+                      <Separator />
+                      <div>
+                        <h3 className="text-lg font-semibold">Mechatronics Technician</h3>
+                        <p className="text-sm text-muted-foreground">CM Wire - Santa Teresa, New Mexico</p>
+                        <p className="text-sm text-muted-foreground font-medium">2019-2021</p>
+                        <ul className="list-disc pl-4 mt-2 text-sm space-y-1">
+                          <li>Troubleshot and maintained electrical repairs on factory equipment</li>
+                          <li>Programmed and maintained PLC and HMI touch panels</li>
+                          <li>Updated manufacturing records and installation reports</li>
+                          <li>Managed end-to-end electrical projects and maintenance schedules</li>
+                        </ul>
+                      </div>
+                      <Separator />
+                      <div>
+                        <h3 className="text-lg font-semibold">Wiring Technician / Quality Assurance</h3>
+                        <p className="text-sm text-muted-foreground">Schneider Electric - El Paso, Texas</p>
+                        <p className="text-sm text-muted-foreground font-medium">2016-2017</p>
+                        <ul className="list-disc pl-4 mt-2 text-sm space-y-1">
+                          <li>Troubleshot electrical and electromechanical operations</li>
+                          <li>Collaborated with engineering teams to resolve problems</li>
+                          <li>Used various tools for grounded fault detection</li>
+                          <li>Oversaw testing and assembly of low voltage electronic products</li>
+                        </ul>
+                      </div>
+                      <Separator />
+                      <div>
+                        <h3 className="text-lg font-semibold">Maintenance Technician III</h3>
+                        <p className="text-sm text-muted-foreground">Dal-Tile - El Paso, Texas</p>
+                        <p className="text-sm text-muted-foreground font-medium">2013-2015</p>
+                        <ul className="list-disc pl-4 mt-2 text-sm space-y-1">
+                          <li>Installed and maintained hydraulic press and electrical panel systems</li>
+                          <li>Performed routine maintenance on material conveyors and cooling systems</li>
+                          <li>Operated hydraulic systems and conducted quality checks</li>
+                          <li>Managed material processing and storage operations</li>
+                        </ul>
+                      </div>
                     </div>
                   </ScrollArea>
                 </CardContent>

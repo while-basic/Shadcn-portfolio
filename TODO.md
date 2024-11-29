@@ -6,11 +6,13 @@
 - [ ] add page navigation on chat
 - [ ] update skills on home page
 - [ ] projects don't render on home page
+- [ ] projects need to navigate to their own page
 - [ ] add breadcrumbs for page navigation
 - [ ] add blog to navlinks
 - [ ] projet page needs a back button
 - [ ] add work gallery
 - [ ] add hover animation to nav links
+- [ ] update code to match resume & cover letter
 - [x] fix navbar links
 - [x] fix experience page and navbar links
 - [x] update experience page
