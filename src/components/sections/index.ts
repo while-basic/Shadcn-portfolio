@@ -14,11 +14,11 @@ export {
   Header,
   Hero,
   About,
-  Projects,
   Skills,
   Experience,
-  Testimonials,
+  Projects,
   Contact,
+  Testimonials,
   Footer,
   WhatIDo,
   Audio

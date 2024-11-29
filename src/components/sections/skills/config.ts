@@ -1,33 +1,77 @@
-import { Skill } from '@/types/skill';
+import { Skill, SkillCategory } from '@/types/skill';
 
-const trimLen: number = -1; // 0 is accordion only, -1 is does not restrict the length
-
-const skills: Skill[] = [
+const categories: SkillCategory[] = [
   {
-    name: 'Software Development',
-    thumbnail: '/images/skills/software-development.jpg',
-    description: `Proficient in Python, JavaScript, Java, C#, HTML, CSS, React, Node.js, SQL, MongoDB, PostgreSQL, and Docker. Experience in developing full-stack applications and integrating with cloud services.`
+    name: 'Development',
+    skills: [
+      {
+        name: 'Frontend Development',
+        proficiency: 90,
+        items: ['React', 'Next.js', 'TypeScript', 'HTML5', 'CSS3', 'Tailwind'],
+        description: 'Building modern, responsive web applications with React and Next.js',
+        thumbnail: '/images/skills/frontend.jpg'
+      },
+      {
+        name: 'Backend Development',
+        proficiency: 85,
+        items: ['Node.js', 'Python', 'Java', 'SQL', 'MongoDB', 'PostgreSQL'],
+        description: 'Developing scalable backend services and APIs',
+        thumbnail: '/images/skills/backend.jpg'
+      },
+      {
+        name: 'DevOps & Tools',
+        proficiency: 80,
+        items: ['Docker', 'Git', 'CI/CD', 'AWS', 'Linux'],
+        description: 'Managing development operations and cloud infrastructure',
+        thumbnail: '/images/skills/devops.jpg'
+      }
+    ]
   },
   {
-    name: 'Preventive Maintenance',
-    thumbnail: '/images/skills/preventive-maintenance.jpg',
-    description: `Expert in preventive maintenance of industrial equipment, including electrical, mechanical, and hydraulic systems. Experience with CMMS systems and maintenance scheduling.`
+    name: 'Industrial',
+    skills: [
+      {
+        name: 'Preventive Maintenance',
+        proficiency: 95,
+        items: ['Equipment Maintenance', 'CMMS Systems', 'Maintenance Scheduling'],
+        description: 'Expert in preventive maintenance of industrial equipment',
+        thumbnail: '/images/skills/preventive-maintenance.jpg'
+      },
+      {
+        name: 'Manufacturing',
+        proficiency: 90,
+        items: ['Production Line', 'Quality Control', 'Process Optimization'],
+        description: 'Extensive experience in industrial manufacturing environments',
+        thumbnail: '/images/skills/industrial-manufacturing.jpg'
+      },
+      {
+        name: 'Electrical Systems',
+        proficiency: 85,
+        items: ['PLC Programming', 'HMI Interfaces', 'Control Systems', 'NFPA 70E'],
+        description: 'Strong background in electrical and control systems',
+        thumbnail: '/images/skills/electrical.jpg'
+      }
+    ]
   },
   {
-    name: 'Industrial Manufacturing',
-    thumbnail: '/images/skills/industrial-manufacturing.jpg',
-    description: `Extensive experience in industrial manufacturing environments, including production line maintenance, quality control, and process optimization.`
-  },
-  {
-    name: 'Project Management',
-    thumbnail: '/images/skills/project-management.jpg',
-    description: `Skilled in managing technical projects, coordinating with cross-functional teams, and ensuring timely delivery while maintaining quality standards.`
-  },
-  {
-    name: 'Electrical & Electronics',
-    thumbnail: '/images/skills/electrical.jpg',
-    description: `Strong background in electrical systems, including PLC programming, HMI interfaces, electronic sensors, and industrial control systems. NFPA 70E Electrical Safety certified.`
+    name: 'Management',
+    skills: [
+      {
+        name: 'Project Management',
+        proficiency: 85,
+        items: ['Agile', 'Scrum', 'Team Leadership', 'Resource Planning'],
+        description: 'Managing technical projects and cross-functional teams',
+        thumbnail: '/images/skills/project-management.jpg'
+      },
+      {
+        name: 'Technical Leadership',
+        proficiency: 80,
+        items: ['Team Mentoring', 'Code Reviews', 'Architecture Design'],
+        description: 'Leading technical teams and making architectural decisions',
+        thumbnail: '/images/skills/leadership.jpg'
+      }
+    ]
   }
 ];
 
-export { trimLen, skills };
+export { categories };
