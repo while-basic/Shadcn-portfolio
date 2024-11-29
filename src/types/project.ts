@@ -4,5 +4,5 @@ export interface Project {
   website?: string;
   github?: string;
   tags?: Array<{ label: string }>;
-  // thumbnail: string;
+  thumbnail?: string;
 }

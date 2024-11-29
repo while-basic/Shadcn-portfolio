@@ -21,10 +21,6 @@ export default function Line({
   let time = Math.PI / 2;
   let reqId: number | null = null;
 
-  useEffect(() => {
-    setPath(progress);
-  }, [progress, setPath]);
-
   const setPath = useCallback((progress: number) => {
     const width = window.innerWidth * 1;
 
@@ -34,6 +30,10 @@ export default function Line({
       `M0 250 Q${width * x} ${250 + progress}, ${width} 250`
     );
   }, [x, path]);
+
+  useEffect(() => {
+    setPath(progress);
+  }, [progress, setPath]);
 
   const lerp = (x: number, y: number, a: number) => x * (1 - a) + y * a;
 

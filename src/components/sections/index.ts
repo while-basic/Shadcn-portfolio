@@ -7,6 +7,7 @@ import Projects from './projects/modern/projects';
 import Contact from './contact/cozy/contact';
 import Testimonials from './testimonials/modern/testimonials';
 import Footer from './footer/cozy/footer';
+import WhatIDo from './what-i-do';
 
 export {
   Header,
@@ -17,5 +18,6 @@ export {
   Experience,
   Testimonials,
   Contact,
-  Footer
+  Footer,
+  WhatIDo
 };

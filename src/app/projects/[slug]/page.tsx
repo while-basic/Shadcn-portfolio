@@ -81,7 +81,7 @@ export default async function ProjectPage(props0: {
       <div className="container mx-auto">
         <Header metadata={page.data} />
         <Image
-          src={`/images/projects/${slug}/cover.jpg`}
+          src={page.data.thumbnail || `/images/projects/${slug}/cover.jpg`}
           width={1280}
           height={832}
           alt={`Image of ${page.data.title}`}

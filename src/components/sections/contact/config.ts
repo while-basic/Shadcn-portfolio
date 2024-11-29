@@ -7,11 +7,11 @@ import {
 } from '@icons-pack/react-simple-icons';
 
 const contact: Contact = {
-  email: 'john@example.com',
+  email: 'chris@chriscelaya.xyz',
   socials: [
     {
       name: 'Github',
-      href: 'https://github.com/',
+      href: 'https://github.com/while-basic',
       Icon: SiGithub
     },
     {

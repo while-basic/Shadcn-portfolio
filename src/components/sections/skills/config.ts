@@ -4,25 +4,29 @@ const trimLen: number = -1; // 0 is accordion only, -1 is does not restrict the 
 
 const skills: Skill[] = [
   {
-    name: 'Web Development',
-    // todo: use proper thumbnail pics
-    thumbnail: '/images/skills/web-development.jpg',
-    description: `Web Development involves creating websites and web applications that are both visually appealing and highly functional. It encompasses a variety of technologies, frameworks, and best practices to ensure a seamless user experience and efficient performance.`
+    name: 'Software Development',
+    thumbnail: '/images/skills/software-development.jpg',
+    description: `Proficient in Python, JavaScript, Java, C#, HTML, CSS, React, Node.js, SQL, MongoDB, PostgreSQL, and Docker. Experience in developing full-stack applications and integrating with cloud services.`
   },
   {
-    name: 'UI/UX Design',
-    thumbnail: '/images/skills/ui-ux-design.jpg',
-    description: `UI/UX Design focuses on creating delightful user experiences through visually appealing and highly functional designs. This skill includes a variety of technologies, frameworks, and best practices to enhance user satisfaction and usability.`
+    name: 'Preventive Maintenance',
+    thumbnail: '/images/skills/preventive-maintenance.jpg',
+    description: `Expert in preventive maintenance of industrial equipment, including electrical, mechanical, and hydraulic systems. Experience with CMMS systems and maintenance scheduling.`
   },
   {
-    name: 'Database Management',
-    thumbnail: '/images/skills/database-management.jpg',
-    description: `Database Management involves efficiently storing and organizing data. This skill covers a range of technologies, frameworks, and best practices to ensure data integrity, security, and performance.`
+    name: 'Industrial Manufacturing',
+    thumbnail: '/images/skills/industrial-manufacturing.jpg',
+    description: `Extensive experience in industrial manufacturing environments, including production line maintenance, quality control, and process optimization.`
   },
   {
-    name: 'Mobile Development',
-    thumbnail: '/images/skills/mobile-development.jpg',
-    description: `Mobile Development entails crafting apps for smartphones and tablets that are both visually appealing and highly functional. It includes a variety of technologies, frameworks, and best practices to provide a seamless user experience on mobile devices.`
+    name: 'Project Management',
+    thumbnail: '/images/skills/project-management.jpg',
+    description: `Skilled in managing technical projects, coordinating with cross-functional teams, and ensuring timely delivery while maintaining quality standards.`
+  },
+  {
+    name: 'Electrical & Electronics',
+    thumbnail: '/images/skills/electrical.jpg',
+    description: `Strong background in electrical systems, including PLC programming, HMI interfaces, electronic sensors, and industrial control systems. NFPA 70E Electrical Safety certified.`
   }
 ];
 

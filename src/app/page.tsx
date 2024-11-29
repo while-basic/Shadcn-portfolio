@@ -7,7 +7,8 @@ import {
   Testimonials,
   Projects,
   Contact,
-  Footer
+  Footer,
+  WhatIDo
 } from '@/components/sections';
 
 import Cursor from '@/components/cursor/cursor';
@@ -21,6 +22,7 @@ export default function Home() {
         <main className="flex-1">
           {/* <Hero /> */}
           <About />
+          <WhatIDo />
           <Skills />
           <Projects />
           <Experience />
