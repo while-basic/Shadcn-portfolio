@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -11,7 +12,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { SignedIn } from "@clerk/nextjs";
 
 const navItems = [
   // { href: "/", label: "Home" },
@@ -27,11 +27,9 @@ const navItems = [
     href: "/dashboard", 
     label: "Dashboard", 
     renderCondition: (
-      <SignedIn key="dashboard-nav-item">
-        <Link href="/dashboard" className="text-sm font-medium transition-all duration-200 relative hover:text-primary group after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-full after:origin-center after:scale-x-0 after:bg-primary after:transition-transform after:duration-200 group-hover:after:scale-x-100">
-          Dashboard
-        </Link>
-      </SignedIn>
+      <Link href="/dashboard" className="text-sm font-medium transition-all duration-200 relative hover:text-primary group after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-full after:origin-center after:scale-x-0 after:bg-primary after:transition-transform after:duration-200 group-hover:after:scale-x-100">
+        Dashboard
+      </Link>
     )
   },
 ];
