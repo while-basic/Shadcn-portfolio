@@ -1,5 +1,17 @@
 # TODO
 
+- [x] fix navbar links
+- [ ] add work gallery
+- [ ] add hover animation to nav links
+- [x] fix experience page and navbar links
+- [x] update experience page
+- [ ] add projects page
+- [ ] add audio page
+- [x] add education page
+- [x] add contact page
+- [x] add testimonials page
+- [ ] add blog page
+- [x] add about page
 - [ ] Add different types of transition providers (like cozy, modern, )
 - [ ] Add different types of loader types (like cozy, modern, )
 - [ ] Redesign the about section

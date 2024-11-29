@@ -9,12 +9,17 @@ const anthropic = new Anthropic({
   apiKey: process.env.CLAUDE_API_KEY,
 });
 
+interface Message {
+  role: 'user' | 'assistant';
+  content: string;
+}
+
 export async function POST(req: Request) {
   try {
     const { messages } = await req.json();
 
     // Limit the number of messages to prevent overload
-    const limitedMessages = messages.slice(-10).map((msg: any) => ({
+    const limitedMessages = messages.slice(-10).map((msg: Message) => ({
       role: msg.role === 'user' ? 'user' : 'assistant',
       content: msg.content,
     }));
@@ -42,22 +47,26 @@ export async function POST(req: Request) {
     }
 
     return NextResponse.json({ message: response.content[0].text });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error:', error);
     
     // Handle specific API errors
-    if (error.type === 'overloaded_error') {
-      return NextResponse.json(
-        { error: 'Service is currently busy. Please try again in a moment.' },
-        { status: 429 }
-      );
-    }
+    if (error instanceof Error && 'type' in error) {
+      const apiError = error as { type: string };
+      
+      if (apiError.type === 'overloaded_error') {
+        return NextResponse.json(
+          { error: 'Service is currently busy. Please try again in a moment.' },
+          { status: 429 }
+        );
+      }
 
-    if (error.type === 'api_error') {
-      return NextResponse.json(
-        { error: 'An error occurred with the AI service. Please try again.' },
-        { status: 500 }
-      );
+      if (apiError.type === 'api_error') {
+        return NextResponse.json(
+          { error: 'An error occurred with the AI service. Please try again.' },
+          { status: 500 }
+        );
+      }
     }
 
     return NextResponse.json(

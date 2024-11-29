@@ -8,18 +8,18 @@ import Contact from './contact/cozy/contact';
 import Testimonials from './testimonials/modern/testimonials';
 import Footer from './footer/cozy/footer';
 import WhatIDo from './what-i-do';
-import Audio from './audio';
+import Audio from './audio/index';
 
-export {
-  Header,
-  Hero,
-  About,
-  Skills,
-  Experience,
-  Projects,
-  Contact,
-  Testimonials,
-  Footer,
-  WhatIDo,
-  Audio
+export { 
+  Header, 
+  Hero, 
+  About, 
+  Skills, 
+  Experience, 
+  Projects, 
+  Contact, 
+  Testimonials, 
+  Footer, 
+  WhatIDo, 
+  Audio 
 };

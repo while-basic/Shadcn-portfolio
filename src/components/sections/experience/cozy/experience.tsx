@@ -6,7 +6,7 @@ import ExperienceCard from './experience-card';
 import { experiences } from '@/components/sections/experience/config';
 import TextReveal from '@/components/motion/text-reveal';
 
-function Experiences() {
+function Experience() {
   return (
     <MotionWrap className="w-full py-24 lg:py-32" id="experiences">
       <div className="px-4 md:px-6">
@@ -36,4 +36,4 @@ function Experiences() {
   );
 }
 
-export default Experiences;
+export default Experience;

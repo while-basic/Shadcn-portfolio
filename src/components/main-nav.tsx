@@ -41,8 +41,10 @@ export function MainNav() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "w-full",
-                    pathname === item.href ? "font-medium" : ""
+                    "w-full transition-colors duration-200",
+                    pathname === item.href 
+                      ? "font-medium text-primary" 
+                      : "text-muted-foreground hover:text-primary"
                   )}
                 >
                   {item.label}
@@ -55,8 +57,11 @@ export function MainNav() {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center">
-        <Link href="/" className="mr-6 flex items-center space-x-2">
-          <span className="font-bold">Christopher Celaya</span>
+        <Link 
+          href="/" 
+          className="mr-6 flex items-center space-x-2 font-bold hover:text-primary transition-colors duration-200"
+        >
+          <span>Christopher Celaya</span>
         </Link>
         <nav className="flex items-center space-x-6 text-sm font-medium">
           {navItems.map((item) => (
@@ -64,8 +69,11 @@ export function MainNav() {
               key={item.href}
               href={item.href}
               className={cn(
-                "transition-colors hover:text-foreground/80",
-                pathname === item.href ? "text-foreground" : "text-foreground/60"
+                "relative transition-colors duration-200 hover:text-primary",
+                "after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-200 hover:after:scale-x-100",
+                pathname === item.href 
+                  ? "text-primary after:scale-x-100" 
+                  : "text-muted-foreground"
               )}
             >
               {item.label}
