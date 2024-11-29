@@ -3,25 +3,25 @@ import { Metadata } from '@/types/metadata';
 const metadata: Metadata = {
   author: {
     name: 'Christopher Celaya',
-    username: 'johndoe',
-    label: 'Designer & Developer'
+    username: 'chriscelaya',
+    label: 'Software Developer & Mechatronic Technician'
   },
   site: {
     title: 'Christopher Celaya',
-    description: 'Portfolio of mechatronics technician and software developer, Christopher Celaya.',
-    url: 'https://www.chriscelaya.com',
+    description: 'Results-driven and innovative technician with extensive experience in computer science, software development, and industrial maintenance.',
+    url: 'https://www.chriscelaya.xyz',
     keywords: [
-      'web design',
-      'UI design',
-      'web development',
-      'portfolio',
-      'Christopher Celaya',
+      'software development',
       'mechatronics',
-      'mechatronics technician',
-      'software developer',
+      'industrial maintenance',
       'preventative maintenance',
       'electrical engineering',
-      'electronic engineering'
+      'mechanical engineering',
+      'automation',
+      'project management',
+      'Christopher Celaya',
+      'technician',
+      'software developer'
     ],
     language: 'en',
     charset: 'UTF-8'

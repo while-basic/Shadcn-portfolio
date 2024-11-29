@@ -19,10 +19,15 @@ export default function About() {
         <div className="flex flex-col items-center md:max-w-7xl">
           <h1 className="leading-wide tracking-relaxed text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
             <TextReveal delay={0.1}>
-              A young tech enthusiast who loves to code
+              Software Developer & Mechatronic Technician
             </TextReveal>
           </h1>
-
+          <div className="mt-8 max-w-2xl text-center text-muted-foreground">
+            <TextReveal delay={0.2}>
+              Results-driven and innovative technician with extensive experience in computer science. 
+              Expertise in software development and project management, complemented by a strong background in preventative maintenance and industrial manufacturing.
+            </TextReveal>
+          </div>
           <Line className={'mt-16'} />
         </div>
         {/*<motion.div*/}
