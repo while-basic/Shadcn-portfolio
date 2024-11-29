@@ -12,7 +12,7 @@ const whatIDo: WhatIDoItem[] = [
   },
   {
     title: 'SOFTWARE DEVELOPMENT',
-    description: 'Self-taught programmer in C, Python, and JavaScript, creating efficient solutions that solve real-world problems.',
+    description: 'Self-taught programmer, creating efficient solutions that solve real-world problems.',
     icon: '💻'
   },
   {

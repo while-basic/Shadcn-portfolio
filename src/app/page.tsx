@@ -101,6 +101,9 @@ export default function Home() {
           </div>
         </section>
 
+        {/* What I Do Section */}
+        <WhatIDo />
+
         {/* Image Carousel Section */}
         <section className="container py-8">
           <h2 className="mb-6 text-3xl font-bold tracking-tight">Featured Work</h2>
@@ -366,7 +369,7 @@ export default function Home() {
                 </div>
                 <div className="flex-shrink-0">
                   <Link
-                    href="https://cal.com/yourusername/30min"
+                    href="https://cal.com/chriscelaya/30min"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

@@ -7,6 +7,7 @@ import { createMetadata } from '@/lib/metadata';
 import { projects } from '@/config/projects';
 import { Card, CardContent } from '@/components/ui/card';
 import { Section } from '@/components/section';
+import { CodeSnippet } from '@/components/code-snippet';
 
 interface ProjectPageProps {
   params: {
@@ -112,6 +113,50 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <Section title="Inspiration" content={project.inspiration} />
               <Section title="Project Details" content={project.projectDetails} />
               <Section title="Development Process" content={project.developmentProcess} />
+
+              {/* Code Snippets Section */}
+              {project.codeSnippets && project.codeSnippets.length > 0 && (
+                <div className="mt-12">
+                  <h2 className="text-3xl font-bold mb-6">Code Snippets</h2>
+                  <div className="space-y-6">
+                    {project.codeSnippets.map((snippet, index) => (
+                      <CodeSnippet
+                        key={index}
+                        title={snippet.title}
+                        language={snippet.language}
+                        code={snippet.code}
+                        description={snippet.description}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Additional Images Section */}
+              {project.images && project.images.length > 0 && (
+                <div className="mt-12">
+                  <h2 className="text-3xl font-bold mb-6">Project Gallery</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {project.images.map((image, index) => (
+                      <figure key={index} className="relative">
+                        <div className="overflow-hidden rounded-lg bg-muted">
+                          <Image
+                            src={image.url}
+                            width={600}
+                            height={400}
+                            alt={image.alt}
+                            className="w-full object-cover transition-transform hover:scale-105"
+                          />
+                        </div>
+                        <figcaption className="mt-2 text-sm text-muted-foreground">
+                          {image.caption}
+                        </figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <Section title="Features" content={project.features} />
               <Section title="Benefits" content={project.benefits} />
               <Section title="Challenges" content={project.challenges} />

@@ -13,14 +13,14 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const navItems = [
-  { href: "/", label: "Home" },
+  // { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/projects", label: "Projects" },
   { href: "/skills", label: "Skills" },
   { href: "/experience", label: "Experience" },
   { href: "/gallery", label: "Gallery" },
-  { href: "/audio", label: "Audio" },
-  { href: "/blog", label: "Blog" },
+  // { href: "/audio", label: "Audio" },
+  // { href: "/blog", label: "Blog" },
   { href: "/chat", label: "Chat" },
 ];
 

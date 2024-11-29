@@ -49,10 +49,89 @@ export const projects: Project[] = [
     futurePlans: [
       "Integration with electronic health records",
       "Mobile application development",
-      "Enhanced multilingual support",
-      "Advanced visualization features"
+      "Enhanced AI model training",
+      "International market expansion"
     ],
-    conclusion: "MedChat demonstrates the potential of AI in healthcare, providing a valuable tool for medical professionals while maintaining high standards of accuracy and reliability."
+    codeSnippets: [
+      {
+        title: "AI Response Handler",
+        language: "typescript",
+        code: `async function handleAIResponse(
+  userInput: string,
+  medicalContext: MedicalContext
+): Promise<DiagnosticResponse> {
+  try {
+    const llmResponse = await llm.generate({
+      prompt: generateMedicalPrompt(userInput, medicalContext),
+      temperature: 0.3,
+      maxTokens: 500
+    });
+    
+    return {
+      suggestion: llmResponse.text,
+      confidence: llmResponse.confidence,
+      references: await fetchMedicalReferences(llmResponse.keywords)
+    };
+  } catch (error) {
+    console.error('AI Response Error:', error);
+    throw new AIResponseError('Failed to generate diagnostic suggestion');
+  }
+}`,
+        description: "Core function handling the AI response generation with medical context and error handling"
+      },
+      {
+        title: "Real-time WebSocket Implementation",
+        language: "typescript",
+        code: `import { WebSocket, Server } from 'ws';
+
+const wsServer = new Server({ port: 8080 });
+
+wsServer.on('connection', (ws: WebSocket) => {
+  ws.on('message', async (message: string) => {
+    const data = JSON.parse(message);
+    
+    // Start streaming AI response
+    const stream = await startAIStream(data.input);
+    
+    stream.on('data', (chunk) => {
+      ws.send(JSON.stringify({
+        type: 'stream',
+        content: chunk.toString()
+      }));
+    });
+    
+    stream.on('end', () => {
+      ws.send(JSON.stringify({
+        type: 'complete'
+      }));
+    });
+  });
+});`,
+        description: "WebSocket server implementation for real-time AI response streaming"
+      }
+    ],
+    images: [
+      {
+        url: "/images/projects/medchat/dashboard.jpg",
+        alt: "MedChat Dashboard Interface",
+        caption: "Main dashboard showing patient history and AI suggestions"
+      },
+      {
+        url: "/images/projects/medchat/diagnosis.jpg",
+        alt: "Diagnosis Flow",
+        caption: "Step-by-step diagnosis process with AI assistance"
+      },
+      {
+        url: "/images/projects/medchat/mobile.jpg",
+        alt: "Mobile Interface",
+        caption: "Responsive mobile interface for on-the-go access"
+      },
+      {
+        url: "/images/projects/medchat/analytics.jpg",
+        alt: "Analytics Dashboard",
+        caption: "Analytics dashboard showing system usage and accuracy metrics"
+      }
+    ]
   },
   {
     title: "Industrial Automation System",
