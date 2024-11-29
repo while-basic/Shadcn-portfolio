@@ -7,6 +7,8 @@ import {
 import '@/styles/globals.css';
 
 import { Toaster } from '@/components/ui/sonner';
+import { ThemeProvider } from '@/components/theme-provider';
+import { SiteHeader } from '@/components/site-header';
 
 import { metadata as meta } from '@/app/config';
 import Loader from '@/app/loader';
@@ -14,7 +16,6 @@ import Providers from '@/app/providers';
 
 import { createMetadata } from '@/lib/metadata';
 
-// https://iamsteve.me/blog/the-best-ink-trap-typefaces-for-websites
 const bricolage_grotesque = Bricolage_Grotesque({ subsets: ['latin'] });
 
 export const metadata = createMetadata({
@@ -30,18 +31,30 @@ export const metadata = createMetadata({
 });
 
 export default function RootLayout({
-  children
-}: Readonly<{
+  children,
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${bricolage_grotesque.className} antialiased`}>
-        <Providers>
-          <Loader />
-          {children}
+    <html lang="en" suppressHydrationWarning className={bricolage_grotesque.className}>
+      <body className="min-h-screen bg-background antialiased">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Providers>
+            <div className="relative flex min-h-screen flex-col">
+              <SiteHeader />
+              <main className="flex-1">
+                <Loader />
+                {children}
+              </main>
+            </div>
+          </Providers>
           <Toaster />
-        </Providers>
+        </ThemeProvider>
       </body>
     </html>
   );
