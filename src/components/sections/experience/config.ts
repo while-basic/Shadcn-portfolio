@@ -6,14 +6,14 @@ const experiences: Experience[] = [
     duration: '2021 - 2022',
     company: 'T5 Data Centers - San Antonio, Texas',
     description: `Managed and operated both critical and non-critical data center infrastructure equipment and systems. Collaborated with a team of Critical Facilities Technician (CFT) to ensure total uptime and reliability while minimizing risks. Utilized a Computerized Maintenance Management System (CMMS) for managing schedules and unscheduled data center tasks.`,
-    avatar: '/images/companies/t5.png'
+    avatar: '/images/companies/t5.jpeg'
   },
   {
     name: 'Mechatronics Technician',
     duration: '2019 - 2021',
     company: 'CM Wire - Santa Teresa, New Mexico',
     description: `Troubleshot and maintained electrical repairs and installations on factory equipment. Integrated diagrams, schematics, and electrical code specifications. Installed and maintained electrical components, electronic sensors, and Human Machine Interface (HMI) touch panels. Managed and directed electrical projects, minimizing downtime, and ensuring quality standards and safety standards are met.`,
-    avatar: '/images/companies/cmwire.png'
+    avatar: '/images/companies/cnwire.jpeg'
   },
   {
     name: 'Wiring Technician / Quality Assurance',

@@ -26,10 +26,7 @@ function Experiences() {
             {experiences.map((experience, index) => (
               <ExperienceCard
                 key={`experience_${index}`}
-                name={experience.name}
-                description={experience.description}
-                company={experience.company}
-                duration={experience.duration}
+                {...experience}
               />
             ))}
           </div>

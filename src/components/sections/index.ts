@@ -8,6 +8,7 @@ import Contact from './contact/cozy/contact';
 import Testimonials from './testimonials/modern/testimonials';
 import Footer from './footer/cozy/footer';
 import WhatIDo from './what-i-do';
+import Audio from './audio';
 
 export {
   Header,
@@ -19,5 +20,6 @@ export {
   Testimonials,
   Contact,
   Footer,
-  WhatIDo
+  WhatIDo,
+  Audio
 };

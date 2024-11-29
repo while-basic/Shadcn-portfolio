@@ -30,12 +30,12 @@ function ExperienceCard({
     <Card className={cn('border-none bg-transparent', className)}>
       <CardContent className="p-1">
         <div className="flex items-center gap-4">
-          <Avatar className="h-12 w-12">
+          <Avatar className="h-16 w-16 border-2 border-border">
             {avatar ? (
-              <AvatarImage src={avatar} alt={companyName} />
+              <AvatarImage src={avatar} alt={companyName} className="object-contain p-2" />
             ) : (
               <AvatarFallback>
-                <Building2Icon className="h-6 w-6" />
+                <Building2Icon className="h-8 w-8" />
               </AvatarFallback>
             )}
           </Avatar>
