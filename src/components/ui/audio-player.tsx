@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { Button } from './button';
 import { Slider } from './slider';
 import { 
@@ -35,6 +35,11 @@ export function AudioPlayer({
   const [isMuted, setIsMuted] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
+
+  const handleEnded = useCallback(() => {
+    setIsPlaying(false);
+    onEnded?.();
+  }, [onEnded]);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -75,7 +80,7 @@ export function AudioPlayer({
       audio.removeEventListener('ended', handleEnded);
       audio.removeEventListener('error', handleError);
     }
-  }, [src]);
+  }, [src, handleEnded]);
 
   useEffect(() => {
     if (audioRef.current) {
@@ -133,11 +138,6 @@ export function AudioPlayer({
       setVolume(0);
       setIsMuted(true);
     }
-  };
-
-  const handleEnded = () => {
-    setIsPlaying(false);
-    onEnded?.();
   };
 
   const formatTime = (time: number) => {

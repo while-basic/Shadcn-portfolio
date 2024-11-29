@@ -26,11 +26,11 @@ interface Track {
 const tracks: Track[] = [
   {
     id: 1,
-    title: "Midnight Dreams",
-    artist: "Christopher Celaya",
-    coverArt: "/music/cover1.jpg",
-    audioUrl: "/music/track1.mp3",
-    duration: "3:45"
+    title: "Home",
+    artist: "C-Cell",
+    coverArt: "/music/home.jpg",
+    audioUrl: "/music/home.mp3",
+    duration: "4:15"
   },
   {
     id: 2,
